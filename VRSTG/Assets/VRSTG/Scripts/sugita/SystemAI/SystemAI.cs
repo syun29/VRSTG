@@ -19,7 +19,7 @@ public enum AIState_SystemType
     Death,      //Ž€–S
 
 }
-/*
+
     public class SystemAI
         : StatefulObjectBase<SystemAI, AIState_SystemType>
     {
@@ -43,6 +43,6 @@ public enum AIState_SystemType
         } 
 
     }
-*/
+
     
 }
