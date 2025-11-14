@@ -1,0 +1,11 @@
+/VRSTG/Library
+/VRSTG/.utmp
+/VRSTG/.vs
+/VRSTG/Build
+/VRSTG/Logs
+/VRSTG/obj
+/VRSTG/Temp
+/VRSTG/UserSettings
+/VRSTG/.vsconfig
+/VRSTG/*.csproj
+/VRSTG/*.sln
