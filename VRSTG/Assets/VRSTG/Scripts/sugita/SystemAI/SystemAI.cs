@@ -53,5 +53,11 @@ namespace StateMachineAI
             //Å‰‚ÍIdol‚ª‹N“®
             ChangeState(AIState_SystemType.Idle);
         }
+
+
+        public void AniatorStateSeSp(string StateName)
+        {
+            
+        }
     }
 }
