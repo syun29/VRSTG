@@ -44,7 +44,7 @@ namespace StateMachineAI
             stateList.Add(new SA_Idol(this));       //待機
             stateList.Add(new SA_Patrol(this));     //徘徊
             stateList.Add(new SA_Chase(this));      //追跡
-            stateList.Add(new SABattle(this));      //戦闘
+            stateList.Add(new SA_Battle(this));      //戦闘
             stateList.Add(new SA_Death(this));      //死亡
             */
             //ステートマシーンを自身として設定
@@ -55,9 +55,57 @@ namespace StateMachineAI
         }
 
 
-        public void AniatorStateSeSp(string StateName)
+        public void AniatorStateSetUp(string StateName)
         {
-            
+            // StateName内の名前のレイヤー番号を取得
+            //int layerIndex = m_Animator.GetLayerIndex(StateName);
+            //現在のアニメーションからStateNameの名前のステートへ0.1秒かけてブレンド
+            // m_Animator.CrossFade(StateName, 0.1f, layerIndex, 0f);
+        }
+
+        public bool Sensor_EnemyDetected()
+        {
+            //フラグ無し
+            bool Flag = false;
+            //プレイヤーがいる
+            if (m_Player)
+            {
+                //相対距離10m以内
+                if (Vector3.Distance(transform.position, m_Player.position) < 10.0f)
+                {
+                    //フラグオン
+                    Flag = true;
+                }
+            }
+            //フラグを返す
+            return Flag;
+        }
+        public bool Sensor_AttackEnemyDistance(float AddPoint)
+        {
+            //フラグ無し
+            bool Flag = false;
+            //プレイヤーがいる
+            if (m_Player)
+            {
+                //相対距離3m以内
+                if (Vector3.Distance(transform.position, m_Player.position) < 3.0f + AddPoint)
+                {
+                    //フラグオン
+                    Flag = true;
+                }
+            }
+            //フラグを返す
+            return Flag;
+        }
+        public void SetEnemy()
+        {
+            //
+            if (!m_Player) 
+            {
+                //全てのオブジェクトで[プレイヤータグ]を全て洗い出す
+                //GameObject[] Dummy = GameObject.FindGameObjectsWithTag
+            }
         }
     }
 }
+

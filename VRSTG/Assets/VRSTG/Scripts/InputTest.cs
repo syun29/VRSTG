@@ -23,28 +23,28 @@ public class InputTest : MonoBehaviour
 
     private void Awake()
     {
-        PlayerInput input = GetComponent<PlayerInput>();
-        input.currentActionMap.Enable();
+        //PlayerInput input = GetComponent<PlayerInput>();
+        //input.currentActionMap.Enable();
 
-        m_inputA = input.currentActionMap.FindAction("A");
-        m_inputB = input.currentActionMap.FindAction("B");
-        m_inputX = input.currentActionMap.FindAction("X");
-        m_inputY = input.currentActionMap.FindAction("Y");
-        m_inputMenu = input.currentActionMap.FindAction("Menu");
-        m_inputThumbL = input.currentActionMap.FindAction("ThumbL");
-        m_inputThumbR = input.currentActionMap.FindAction("ThumbR");
-        m_inputTriggerBtnL = input.currentActionMap.FindAction("TriggerButtonL");
-        m_inputTriggerBtnR = input.currentActionMap.FindAction("TriggerButtonR");
-        m_inputGripBtnL = input.currentActionMap.FindAction("GripButtonL");
-        m_inputGripBtnR = input.currentActionMap.FindAction("GripButtonR");
+        //m_inputA = input.currentActionMap.FindAction("A");
+        //m_inputB = input.currentActionMap.FindAction("B");
+        //m_inputX = input.currentActionMap.FindAction("X");
+        //m_inputY = input.currentActionMap.FindAction("Y");
+        //m_inputMenu = input.currentActionMap.FindAction("Menu");
+        //m_inputThumbL = input.currentActionMap.FindAction("ThumbL");
+        //m_inputThumbR = input.currentActionMap.FindAction("ThumbR");
+        //m_inputTriggerBtnL = input.currentActionMap.FindAction("TriggerButtonL");
+        //m_inputTriggerBtnR = input.currentActionMap.FindAction("TriggerButtonR");
+        //m_inputGripBtnL = input.currentActionMap.FindAction("GripButtonL");
+        //m_inputGripBtnR = input.currentActionMap.FindAction("GripButtonR");
 
-        m_inputTriggerL = input.currentActionMap.FindAction("TriggerL");
-        m_inputTriggerR = input.currentActionMap.FindAction("TriggerR");
-        m_inputGripL = input.currentActionMap.FindAction("GripL");
-        m_inputGripR = input.currentActionMap.FindAction("GripR");
+        //m_inputTriggerL = input.currentActionMap.FindAction("TriggerL");
+        //m_inputTriggerR = input.currentActionMap.FindAction("TriggerR");
+        //m_inputGripL = input.currentActionMap.FindAction("GripL");
+        //m_inputGripR = input.currentActionMap.FindAction("GripR");
 
-        m_inputStickL = input.currentActionMap.FindAction("StickL");
-        m_inputStickR = input.currentActionMap.FindAction("StickR");
+        //m_inputStickL = input.currentActionMap.FindAction("StickL");
+        //m_inputStickR = input.currentActionMap.FindAction("StickR");
     }
 
     private void Update()
