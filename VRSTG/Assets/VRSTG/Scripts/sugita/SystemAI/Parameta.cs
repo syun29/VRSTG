@@ -6,10 +6,12 @@ public class Parameta : MonoBehaviour
     public SystemAI m_SAI;
     public bool m_Flag;
     public int m_Hp;
+    public int m_HpMax;
     
     private void Start()
     {
         m_SAI = GetComponent<SystemAI>();
+        m_HpMax = m_Hp;
         m_Flag = false;
     }
 
