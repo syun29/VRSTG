@@ -8,9 +8,9 @@ public class Item : MonoBehaviour
 {
     public enum ItemType
     {
-        Wood,
-        Stone,
-        ThrowAxe
+        AssaultRifle,
+        ShotGun,
+        RocketLauncher,
     }
 
     [SerializeField] private ItemType type;
