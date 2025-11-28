@@ -55,7 +55,9 @@ namespace StateMachineAI
             ChangeState(AIState_SystemType.Idle);
         }
 
-
+        /// <summary>
+        /// <param name="StateName">レイヤー・ステート名
+        /// </summary>
         public void AniatorStateSetUp(string StateName)
         {
             //StateName内の名前のレイヤー番号を取得

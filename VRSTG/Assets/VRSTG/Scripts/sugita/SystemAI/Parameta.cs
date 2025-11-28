@@ -3,14 +3,14 @@ using StateMachineAI;
 
 public class Parameta : MonoBehaviour
 {
-    public SystemAI m_SAI;
+    public SystemAI m_SAAI;
     public bool m_Flag;
     public int m_Hp;
     public int m_HpMax;
     
     private void Start()
     {
-        m_SAI = GetComponent<SystemAI>();
+        m_SAAI = GetComponent<SystemAI>();
         m_HpMax = m_Hp;
         m_Flag = false;
     }
@@ -35,7 +35,7 @@ public class Parameta : MonoBehaviour
             }
             else
             {
-              //  m_SAI.Hit();
+                m_SAAI.Hit();
             }
 
         }
