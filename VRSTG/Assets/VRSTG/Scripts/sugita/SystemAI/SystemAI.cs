@@ -57,7 +57,7 @@ namespace StateMachineAI
 
         public void AniatorStateSetUp(string StateName)
         {
-            // StateName内の名前のレイヤー番号を取得
+            //StateName内の名前のレイヤー番号を取得
             //int layerIndex = m_Animator.GetLayerIndex(StateName);
             //現在のアニメーションからStateNameの名前のステートへ0.1秒かけてブレンド
             // m_Animator.CrossFade(StateName, 0.1f, layerIndex, 0f);
@@ -103,8 +103,34 @@ namespace StateMachineAI
             if (!m_Player) 
             {
                 //全てのオブジェクトで[プレイヤータグ]を全て洗い出す
-                //GameObject[] Dummy = GameObject.FindGameObjectsWithTag
+                GameObject[] Dummy = GameObject.FindGameObjectsWithTag("Player");
+                //
+                m_Player = Dummy[UnityEngine.Random.Range(0, Dummy.Length)].transform;
+                //
+                if (m_Player == transform)
+                    m_Player = null;
+                else
+                {
+                    //
+                    if (m_Player.GetComponent<Parameta>().m_Hp <= 0)
+                        m_Player = null;
+                }
             }
+        }
+        
+        public void Hit()
+        {
+            //[被弾]という名前のレイヤー番号を取得
+            //int layerIndex = m_Animator.GetLayerIndex("被弾");
+            //正面被弾
+            // m_Animator.SetInteger("被弾", UnityEngine.Random.Range(0, 2));
+            //現在のアニメーションから[Hit]ステートへ0.1秒ブレンド
+            // m_Animator.CrossFade("被弾", 0.1f, layerIndex, 0f);
+        }
+
+        public void Death()
+        {
+
         }
     }
 }
