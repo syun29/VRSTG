@@ -6,16 +6,16 @@ using UnityEditorInternal.Profiling.Memory.Experimental;
 
 public class OwnedItemsData
 {
-    private const string PlayerPrefsKey = "OWNNED_ITEMS_DATA";
+    //private const string PlayerPrefsKey = "OWNNED_ITEMS_DATA";
     public static OwnedItemsData Instance
     {
         get
         {
             if (null == _instance)
             {
-                _instance = PlayerPrefs.HasKey(PlayerPrefsKey)
-                    ? JsonUtility.FromJson<OwnedItemsData>(PlayerPrefs.GetString(PlayerPrefsKey))
-                    : new OwnedItemsData();
+                //_instance = PlayerPrefs.HasKey(PlayerPrefsKey)
+                //    ? JsonUtility.FromJson<OwnedItemsData>(PlayerPrefs.GetString(PlayerPrefsKey))
+                //    : new OwnedItemsData();
             }
             return _instance;
         }
@@ -35,8 +35,8 @@ public class OwnedItemsData
     public void Save()
     {
         var jsonString = JsonUtility.ToJson(this);
-        PlayerPrefs.SetString(PlayerPrefsKey, jsonString);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetString(PlayerPrefsKey, jsonString);
+      //  PlayerPrefs.Save();
     }
 
     public void Add(Item.ItemType type, int number = 1)
@@ -62,7 +62,6 @@ public class OwnedItemsData
     {
         return ownedItems.FirstOrDefault(x => x.Type == type);
     }
-    [Serializable]
     public class OwnedItem
     {
         public Item.ItemType Type
