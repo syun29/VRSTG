@@ -49,41 +49,41 @@ public class InputTest : MonoBehaviour
 
     private void Update()
     {
-        //    DebugCanVas.Print
-        //    (
-        //       "A:{0} | B:{1} | X:{2} | Y:{3} | M:{4}",
-        //       m_inputA.IsPressed(),
-        //       m_inputB.IsPressed(),
-        //       m_inputX.IsPressed(),
-        //       m_inputY.IsPressed(),
-        //       m_inputMenu.IsPressed()
-        //    );
+        DebugCanVas.Print
+        (
+           "A:{0} | B:{1} | X:{2} | Y:{3} | M:{4}",
+           m_inputA.IsPressed(),
+           m_inputB.IsPressed(),
+           m_inputX.IsPressed(),
+           m_inputY.IsPressed(),
+           m_inputMenu.IsPressed()
+        );
 
-        //    DebugCanVas.Print
-        //    (
-        //       "Thumb [L:{0} | R:{1}] Grip[ L:{2} | R:{3}] Trigger[ L:{4} | R:{5}]",
-        //       m_inputThumbL.IsPressed(),
-        //       m_inputThumbR.IsPressed(),
-        //       m_inputGripBtnL.IsPressed(),
-        //       m_inputGripBtnR.IsPressed(),
-        //       m_inputTriggerBtnL.IsPressed(),
-        //       m_inputTriggerBtnR.IsPressed()
-        //    );
+        DebugCanVas.Print
+        (
+           "Thumb [L:{0} | R:{1}] Grip[ L:{2} | R:{3}] Trigger[ L:{4} | R:{5}]",
+           m_inputThumbL.IsPressed(),
+           m_inputThumbR.IsPressed(),
+           m_inputGripBtnL.IsPressed(),
+           m_inputGripBtnR.IsPressed(),
+           m_inputTriggerBtnL.IsPressed(),
+           m_inputTriggerBtnR.IsPressed()
+        );
 
-        //    DebugCanVas.Print
-        //    (
-        //       "Grip [L:{0} | R:{1}] Trigger[ L:{2} | R:{3}]",
-        //      m_inputGripL.ReadValue<float>(),
-        //      m_inputGripR.ReadValue<float>(),
-        //      m_inputTriggerL.ReadValue<float>(),
-        //      m_inputTriggerR.ReadValue<float>()
-        //    );
+        DebugCanVas.Print
+        (
+           "Grip [L:{0} | R:{1}] Trigger[ L:{2} | R:{3}]",
+          m_inputGripL.ReadValue<float>(),
+          m_inputGripR.ReadValue<float>(),
+          m_inputTriggerL.ReadValue<float>(),
+          m_inputTriggerR.ReadValue<float>()
+        );
 
-        //    DebugCanVas.Print
-        //   (
-        //      "StickL:{0} | StickR:{1}",
-        //     m_inputStickL.ReadValue<Vector2>(),
-        //     m_inputStickR.ReadValue<Vector2>()
-        //   );
+        DebugCanVas.Print
+       (
+          "StickL:{0} | StickR:{1}",
+         m_inputStickL.ReadValue<Vector2>(),
+         m_inputStickR.ReadValue<Vector2>()
+       );
     }
 }
