@@ -959,6 +959,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0face853d2311e84c837dcbe1a47b089, type: 3}
+--- !u!20 &441087507 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1767192439, guid: 0face853d2311e84c837dcbe1a47b089, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &453480168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,8 +2626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99efb0721dfae9d46974fb00ed484848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  lifeGaugePrefab: {fileID: 0}
+  mainCamera: {fileID: 441087507}
+  lifeGaugePrefab: {fileID: 3787773401377402478, guid: 388c31799a88f4d4690640efd6ef6dfa, type: 3}
 --- !u!222 &1248670581
 CanvasRenderer:
   m_ObjectHideFlags: 0
