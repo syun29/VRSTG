@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CubeSpawner : MonoBehaviour
 {
-    [SerializeField] private float m_spawnInterval = 1f;
+    [SerializeField] private float m_spawnInterval = 0.01f;
     [SerializeField] private Cube m_cubePrefab;
 
     private List<Cube> m_cubes = new List<Cube>();
@@ -11,14 +11,16 @@ public class CubeSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (m_elapsedTime >= m_spawnInterval)
+        //if (m_elapsedTime >= m_spawnInterval)
+        if (m_spawnInterval < 0)
         {
             Cube cube = Instantiate(m_cubePrefab, transform);
             m_cubes.Add(cube);
 
             Vector3 spawnPos = Vector3.zero;
-            spawnPos.x = Random.Range(-1f, 1f);
-            spawnPos.z = Random.Range(-1f, 1f);
+            spawnPos.x = Random.Range(-49f, 98f);
+            spawnPos.y = -0.5f;
+            spawnPos.z = Random.Range(-67f, 79f);
             cube.transform.localPosition = spawnPos;
 
             cube.transform.localRotation = Quaternion.Euler
@@ -32,8 +34,14 @@ public class CubeSpawner : MonoBehaviour
             cube.transform.localScale = Vector3.one * spawnScale;
 
 
-            m_elapsedTime -= m_spawnInterval;
+            //m_elapsedTime -= m_spawnInterval;
+            m_spawnInterval = 0.01f;
         }
-        m_elapsedTime += Time.deltaTime;
+        else
+        {
+            m_spawnInterval -= Time.deltaTime;
+        }
+        //m_elapsedTime += Time.deltaTime;
+        
     }
 }
