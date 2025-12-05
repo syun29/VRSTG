@@ -18,9 +18,9 @@ namespace StateMachineAI
             //ナビゲーションを停止
             owner.m_NavMeshAgent.enabled = false;
             //AnimatorのStateを待機モードへブレンド
-            owner.AniatorStateSetUp("待機モード");
+            owner.AnimatorStateSetUp("待機モード");
             //Animatorは待機モードを実施（モード0を起動）
-            //owner.m_Animator.SetInteger("モード", 0);
+            owner.m_Animator.SetInteger("モード", 0);
 
             //パトロール切り替え時間2～4秒
             m_CheckTime = Random.Range(2.0f, 4.0f);

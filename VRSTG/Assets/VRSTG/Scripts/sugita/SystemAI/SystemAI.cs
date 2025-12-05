@@ -24,7 +24,7 @@ namespace StateMachineAI
         : StatefulObjectBase<SystemAI, AIState_SystemType>
     {
         [Header("アニメーターリンク")]
-        public Animation m_Animator;
+        public Animator m_Animator;
         [Header("Navigationリンク")]
         public NavMeshAgent m_NavMeshAgent;
         [Header("ターゲット指定")]
@@ -38,16 +38,15 @@ namespace StateMachineAI
         void Start()
         {
             //Animatorをリンクする
-            m_Animator = GetComponent<Animation>();
+            m_Animator = GetComponent<Animator>();
             //新しくscriptを作り同じ名前で追加する
             
             stateList.Add(new SA_Idol(this));       //待機
-            /*
             stateList.Add(new SA_Patrol(this));     //徘徊
             stateList.Add(new SA_Chase(this));      //追跡
-            stateList.Add(new SA_Battle(this));      //戦闘
+            stateList.Add(new SA_Battle(this));     //戦闘
             stateList.Add(new SA_Death(this));      //死亡
-            */
+            
             //ステートマシーンを自身として設定
             stateMachine = new StateMachine<SystemAI>();
 
@@ -58,12 +57,12 @@ namespace StateMachineAI
         /// <summary>
         /// <param name="StateName">レイヤー・ステート名
         /// </summary>
-        public void AniatorStateSetUp(string StateName)
+        public void AnimatorStateSetUp(string StateName)
         {
             //StateName内の名前のレイヤー番号を取得
-            //int layerIndex = m_Animator.GetLayerIndex(StateName);
+            int layerIndex = m_Animator.GetLayerIndex(StateName);
             //現在のアニメーションからStateNameの名前のステートへ0.1秒かけてブレンド
-            //m_Animator.CrossFade(StateName, 0.1f, layerIndex, 0f);
+            m_Animator.CrossFade(StateName, 0.1f, layerIndex, 0f);
         }
 
         public bool Sensor_EnemyDetected()
@@ -132,17 +131,17 @@ namespace StateMachineAI
         public void Hit()
         {
             //[被弾]という名前のレイヤー番号を取得
-            //int layerIndex = m_Animator.GetLayerIndex("被弾");
+            int layerIndex = m_Animator.GetLayerIndex("被弾");
             //正面被弾
-            // m_Animator.SetInteger("被弾", UnityEngine.Random.Range(0, 2));
+             m_Animator.SetInteger("被弾", UnityEngine.Random.Range(0, 2));
             //現在のアニメーションから[Hit]ステートへ0.1秒ブレンド
-            // m_Animator.CrossFade("被弾", 0.1f, layerIndex, 0f);
+             m_Animator.CrossFade("被弾", 0.1f, layerIndex, 0f);
         }
 
         public void Death()
         {
-          //int layerIndex = m_Animator.GetLayerIndex("死亡");
-          //  m_Animator.CrossFade("死亡", 0.1f, layerIndex, 0f);
+            int layerIndex = m_Animator.GetLayerIndex("死亡");
+            m_Animator.CrossFade("死亡", 0.1f, layerIndex, 0f);
             ChangeState(AIState_SystemType.Death);
         }
         public void SetDestroy() 
