@@ -19,7 +19,7 @@ public class CubeSpawner : MonoBehaviour
 
             Vector3 spawnPos = Vector3.zero;
             spawnPos.x = Random.Range(-49f, 98f);
-            spawnPos.y = -0.5f;
+            spawnPos.y = 1.0f;
             spawnPos.z = Random.Range(-67f, 79f);
             cube.transform.localPosition = spawnPos;
 
