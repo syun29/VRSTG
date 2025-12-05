@@ -11,6 +11,7 @@ public class Item : MonoBehaviour
         AssaultRifle,
         ShotGun,
         RocketLauncher,
+        Gun,
     }
 
     [SerializeField] private ItemType type;
