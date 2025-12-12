@@ -15,7 +15,7 @@ namespace StateMachineAI
         public override void Enter()
         {
             //プレイヤーがいない場合
-            if (!owner.m_Taget)
+            if (!owner.m_Target)
                 owner.SetTaget();
 
             //ナビゲーションを起動

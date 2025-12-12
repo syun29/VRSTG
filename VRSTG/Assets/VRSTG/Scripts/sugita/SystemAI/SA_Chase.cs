@@ -17,7 +17,7 @@ namespace StateMachineAI
         public override void Enter()
         {
             //プレイヤーがいない場合
-            if (!owner.m_Taget)
+            if (!owner.m_Target)
                 owner.SetTaget();
 
 
@@ -40,7 +40,7 @@ namespace StateMachineAI
         public void Brain()
         {
             //追跡中に、プレイヤーがいない?
-            if (!owner.m_Taget)
+            if (!owner.m_Target)
             {
                 //追跡停止、待機モード
                 owner.ChangeState(AIState_SystemType.Idle);
@@ -59,10 +59,10 @@ namespace StateMachineAI
             }
             else
             {
-                if (owner.m_Taget)
+                if (owner.m_Target)
                 {
                     //プレイヤーを追いかける
-                    owner.m_NavMeshAgent.SetDestination(owner.m_Taget.position);
+                    owner.m_NavMeshAgent.SetDestination(owner.m_Target.position);
                 }
                 else
                 {

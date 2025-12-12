@@ -30,7 +30,7 @@ public class CubeSpawner : MonoBehaviour
                     Random.Range(0f, 360f)
                 );
 
-            float spawnScale = Random.Range(0.125f, 0.25f);
+            float spawnScale = Random.Range(0.125f/2, 0.25f/2);
             cube.transform.localScale = Vector3.one * spawnScale;
 
 

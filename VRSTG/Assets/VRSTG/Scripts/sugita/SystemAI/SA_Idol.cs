@@ -12,7 +12,7 @@ namespace StateMachineAI
         public SA_Idol(SystemAI owner) : base(owner) 
         {
             //
-            if (!owner.m_Taget)
+            if (!owner.m_Target)
                 owner.SetTaget();
 
             //ナビゲーションを停止

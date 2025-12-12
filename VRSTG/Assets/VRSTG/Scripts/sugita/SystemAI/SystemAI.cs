@@ -28,7 +28,7 @@ namespace StateMachineAI
         [Header("Navigationリンク")]
         public NavMeshAgent m_NavMeshAgent;
         [Header("ターゲット指定")]
-        public Transform m_Taget;
+        public Transform m_Target;
         [Header("戦闘中の旋回速度")]
         public float m_RotateSpeed = 60.0f;
 
@@ -38,7 +38,7 @@ namespace StateMachineAI
         void Start()
         {
             //Animatorをリンクする
-            m_Animator = GetComponent<Animator>();
+            //m_Animator = GetComponent<Animator>();
             //新しくscriptを作り同じ名前で追加する
             
             stateList.Add(new SA_Idol(this));       //待機
@@ -70,10 +70,10 @@ namespace StateMachineAI
             //フラグ無し
             bool Flag = false;
             //プレイヤーがいる
-            if (m_Taget)
+            if (m_Target)
             {
                 //相対距離10m以内
-                if (Vector3.Distance(transform.position, m_Taget.position) < 10.0f)
+                if (Vector3.Distance(transform.position, m_Target.position) < 10.0f)
                 {
                     //フラグオン
                     Flag = true;
@@ -92,10 +92,10 @@ namespace StateMachineAI
             //フラグ無し
             bool Flag = false;
             //プレイヤーがいる
-            if (m_Taget)
+            if (m_Target)
             {
                 //相対距離3m以内
-                if (Vector3.Distance(transform.position, m_Taget.position) < 3.0f + AddPoint)
+                if (Vector3.Distance(transform.position, m_Target.position) < 3.0f + AddPoint)
                 {
                     //フラグオン
                     Flag = true;
@@ -107,20 +107,20 @@ namespace StateMachineAI
         public void SetTaget()
         {
             //
-            if (!m_Taget) 
+            if (!m_Target) 
             {
                 //全てのオブジェクトで[プレイヤータグ]を全て洗い出す
-                GameObject[] Dummy = GameObject.FindGameObjectsWithTag("Taget");
+                GameObject[] Dummy = GameObject.FindGameObjectsWithTag("Target");
                 //
-                m_Taget = Dummy[UnityEngine.Random.Range(0, Dummy.Length)].transform;
+                m_Target = Dummy[UnityEngine.Random.Range(0, Dummy.Length)].transform;
                 //
-                if (m_Taget == transform)
-                    m_Taget = null;
+                if (m_Target == transform)
+                    m_Target = null;
                 else
                 {
                     //
-                    if (m_Taget.GetComponent<Parameta>().m_Hp <= 0)
-                        m_Taget = null;
+                    if (m_Target.GetComponent<Parameta>().m_Hp <= 0)
+                        m_Target = null;
                 }
             }
         }

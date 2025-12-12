@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 757557126340351494}
   - component: {fileID: 2400937062323278143}
   - component: {fileID: 457743318516967668}
+  - component: {fileID: 6506424356330678106}
   m_Layer: 0
   m_Name: HandGrenade
   m_TagString: Untagged
@@ -737,6 +738,19 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &6506424356330678106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326909632497394576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdd144769931c041a5866a9c95e28a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &6311544880327382120
 PrefabInstance:
   m_ObjectHideFlags: 0

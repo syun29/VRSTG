@@ -45,9 +45,9 @@ public class Gun : MonoBehaviour
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         bool left = m_interactable.IsSelectedByLeft();
-        //m_input.SwitchCurrentActionMap(left ? "GlabL" : "GrabR");
+        m_input.SwitchCurrentActionMap(left ? "GlabL" : "GrabR");
 
-        //m_reloadActinon = m_input.currentActionMap.FindAction("Reload");
+        m_reloadActinon = m_input.currentActionMap.FindAction("Reload");
 
         m_selectSE.Stop();
         m_selectSE.Play();

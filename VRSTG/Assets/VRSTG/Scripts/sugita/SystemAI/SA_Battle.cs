@@ -23,7 +23,7 @@ namespace StateMachineAI
             m_EnemyChange = 10.0f;
 
             //プレイヤーがいない場合
-            if (!owner.m_Taget)
+            if (!owner.m_Target)
                 owner.SetTaget();
 
             //ナビゲーション停止
@@ -82,7 +82,7 @@ namespace StateMachineAI
             }
 
             //プレイヤーがいない
-            if (!owner.m_Taget)
+            if (!owner.m_Target)
             {
                 //待機モード
                 owner.ChangeState(AIState_SystemType.Idle);
@@ -122,9 +122,9 @@ namespace StateMachineAI
         public void LookUnit()
         {
             //ターゲットがいない場合は実行しない
-            if (owner.m_Taget == null) return;
+            if (owner.m_Target == null) return;
             //ターゲットの向き
-            Vector3 direction = owner.m_Taget.position - owner.transform.position;
+            Vector3 direction = owner.  m_Target.position - owner.transform.position;
             //y軸0にして傾きをなくす
             direction.y = 0;
             //向きが変わらないなら処理終了
