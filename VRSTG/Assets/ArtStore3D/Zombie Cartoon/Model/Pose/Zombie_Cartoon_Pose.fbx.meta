@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 9815321c5c8cfcf43bbb9be7450f720f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292251
+  packageName: Zombie Cartoon
+  packageVersion: 1.0
+  assetPath: Assets/ArtStore3D/Zombie Cartoon/Model/Pose/Zombie_Cartoon_Pose.fbx
+  uploadId: 698257
 ModelImporter:
-  serializedVersion: 21202
+  serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -21,8 +28,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -45,6 +50,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
@@ -72,6 +78,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -104,14 +111,9 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 292251
-  packageName: Zombie Cartoon
-  packageVersion: 1.0
-  assetPath: Assets/ArtStore3D/Zombie Cartoon/Model/Pose/Zombie_Cartoon_Pose.fbx
-  uploadId: 698257
