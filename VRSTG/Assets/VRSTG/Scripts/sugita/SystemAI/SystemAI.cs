@@ -109,10 +109,14 @@ namespace StateMachineAI
             //
             if (!m_Target) 
             {
-                //全てのオブジェクトで[プレイヤータグ]を全て洗い出す
-                GameObject[] Dummy = GameObject.FindGameObjectsWithTag("Target");
-                //
-                m_Target = Dummy[UnityEngine.Random.Range(0, Dummy.Length)].transform;
+                ////全てのオブジェクトで[プレイヤータグ]を全て洗い出す
+                //GameObject[] Dummy = GameObject.FindGameObjectsWithTag("Target");
+                ////
+                //m_Target = Dummy[UnityEngine.Random.Range(0, Dummy.Length)].transform;
+                TargetObject obj = TargetObject.GetNearTarget(transform.position);
+                if (obj == null) return;
+                m_Target = obj.transform;
+
                 //
                 if (m_Target == transform)
                     m_Target = null;

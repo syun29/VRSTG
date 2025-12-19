@@ -5,6 +5,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject m_EnemyPrefab;      //生成する敵
     [SerializeField] private Transform[] m_SpawnPoints;     //上下左右の4つのスポーン
     [SerializeField] private float m_SpawnInterval = 2f;    //生成間隔（秒）
+    [SerializeField] private Transform m_TargetTF;
 
     private float m_Timer;
 

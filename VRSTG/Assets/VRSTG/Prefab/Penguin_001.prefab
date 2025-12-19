@@ -593,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 9081336411156849997}
   m_NavMeshAgent: {fileID: 1035471607350510933}
-  m_Taget: {fileID: 0}
+  m_Target: {fileID: 0}
   m_RotateSpeed: 60
 --- !u!1 &6657441228223813263
 GameObject:
