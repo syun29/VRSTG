@@ -8,9 +8,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform m_TargetTF;
 
     private float m_Timer;
-
+    
     public void Update()
     {
+        
+
         m_Timer += Time.deltaTime;
 
         if(m_Timer >= m_SpawnInterval)

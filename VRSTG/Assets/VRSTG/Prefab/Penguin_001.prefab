@@ -232,7 +232,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3367344388165740094}
   - component: {fileID: 9081336411156849997}
-  - component: {fileID: 1035471607350510933}
   m_Layer: 0
   m_Name: Penguin_001
   m_TagString: Untagged
@@ -279,28 +278,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!195 &1035471607350510933
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2733937096308194436}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &3243341188129187505
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +479,7 @@ GameObject:
   - component: {fileID: 6327783862751702367}
   - component: {fileID: -8473647554580998820}
   - component: {fileID: 7100882085718793472}
+  - component: {fileID: 4820498163312390090}
   m_Layer: 0
   m_Name: Penguin_001
   m_TagString: Untagged
@@ -592,9 +570,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 9081336411156849997}
-  m_NavMeshAgent: {fileID: 1035471607350510933}
+  m_NavMeshAgent: {fileID: 4820498163312390090}
   m_Target: {fileID: 0}
   m_RotateSpeed: 60
+--- !u!195 &4820498163312390090
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073660616257176535}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6657441228223813263
 GameObject:
   m_ObjectHideFlags: 0

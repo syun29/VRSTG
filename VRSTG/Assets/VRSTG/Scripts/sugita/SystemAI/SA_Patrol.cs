@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 namespace StateMachineAI
@@ -26,8 +27,18 @@ namespace StateMachineAI
             //Animatorは待機モードを実行
             owner.m_Animator.SetInteger("モード", 1);
 
-            //適当な場所を指定
-            m_PatrolPoint = new Vector3(Random.Range(10.0f, -10.0f), 0, Random.Range(10.0f, -10.0f));
+            for (int i = 0; i < 10; i++)
+            {
+                //適当な場所を指定
+                Vector3 pos = new Vector3(Random.Range(10.0f, -10.0f), 0, Random.Range(10.0f, -10.0f));
+                if (NavMesh.SamplePosition(pos, out NavMeshHit hit, 5f, NavMesh.AllAreas))
+                {
+                    m_PatrolPoint = hit.position;
+                    owner.m_NavMeshAgent.SetDestination(m_PatrolPoint);
+                    break;
+                }
+            }
+           
         }
         //このAIが起動中に常に実行(Updateと同義)
         public override void Stay()
@@ -36,9 +47,16 @@ namespace StateMachineAI
         }
         public override void Exit(){ }
 
+        private bool IsEndMove()
+        {
+            if (owner.m_NavMeshAgent.pathPending) return false;
+            if (!owner.m_NavMeshAgent.hasPath) return true;
+            if (owner.m_NavMeshAgent.remainingDistance <= 3f) return true;
+            return false;
+        }
         public void Brain()
         {
-            if (Vector3.Distance(owner.transform.position, m_PatrolPoint) <= 3.0f) 
+            if (IsEndMove()) 
             {
                 //パトロール終了時に待機を実行
                 owner.ChangeState(AIState_SystemType.Idle);
@@ -46,7 +64,7 @@ namespace StateMachineAI
             else
             {
                 //パトロールポイントに向かう
-                owner.m_NavMeshAgent.SetDestination(m_PatrolPoint);
+                //owner.m_NavMeshAgent.SetDestination(m_PatrolPoint);
             }
             //敵を発見
             if (owner.Sensor_EnemyDetected())

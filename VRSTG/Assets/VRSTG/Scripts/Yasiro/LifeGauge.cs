@@ -24,6 +24,7 @@ public class LifeGauge : MonoBehaviour
 
     private void Refresh()
     {
+        if (_status.m_HpMax <= 0) return;
         fillImage.fillAmount = _status.m_Hp / _status.m_HpMax;
 
         var screenPoint = _camera.WorldToScreenPoint(_status.transform.position);

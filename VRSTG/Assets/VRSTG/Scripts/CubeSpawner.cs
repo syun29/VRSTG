@@ -5,6 +5,8 @@ public class CubeSpawner : MonoBehaviour
 {
     [SerializeField] private float m_spawnInterval = 0.01f;
     [SerializeField] private Cube m_cubePrefab;
+    [SerializeField] private float m_randScaleMin;
+    [SerializeField] private float m_randScaleMax;
 
     private List<Cube> m_cubes = new List<Cube>();
     private float m_elapsedTime;
@@ -30,7 +32,7 @@ public class CubeSpawner : MonoBehaviour
                     Random.Range(0f, 360f)
                 );
 
-            float spawnScale = Random.Range(0.125f/2, 0.25f/2);
+            float spawnScale = Random.Range(m_randScaleMin, m_randScaleMax);
             cube.transform.localScale = Vector3.one * spawnScale;
 
 
