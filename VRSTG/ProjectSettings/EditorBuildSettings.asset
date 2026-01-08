@@ -7,6 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/VRSTG/Title.unity
+    guid: 02170c8c5033e2d4e88ab7dec79f23f2
+  - enabled: 0
+    path: Assets/VRSTG/Title_.unity
     guid: fc73a8f7ae104e64e836506d92b26838
   - enabled: 1
     path: Assets/VRSTG/VRSTG.unity
