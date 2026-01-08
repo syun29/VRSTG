@@ -1,3 +1,4 @@
+using StateMachineAI;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -7,7 +8,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float m_SpawnInterval = 2f;    //¶¬ŠÔŠui•bj
     [SerializeField] private Transform m_TargetTF;
 
+    [SerializeField] private int m_MaxEnemyCount = 100;     //“G‚ÌÅ‘å”
+
     private float m_Timer;
+    private int m_CurrentEnemyCount = 0;    //Œ»İ‚Ì“G‚Ì”
     
     public void Update()
     {
@@ -23,6 +27,11 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SpawnEnemy()
     {
+        if (m_CurrentEnemyCount >= m_MaxEnemyCount) 
+        {
+            return;
+        }
+
         if(m_EnemyPrefab == null || m_SpawnPoints.Length == 0)
         {
             Debug.LogWarning("EnemyPrefab‚Ü‚½‚ÍSpawnPoints‚ªİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
@@ -30,8 +39,16 @@ public class EnemySpawner : MonoBehaviour
         }
         //0`m_SpawnPoints.Length-1‚Ìƒ‰ƒ“ƒ_ƒ€‚ÈƒCƒ“ƒfƒbƒNƒX‚ğæ“¾
         int index = Random.Range(0, m_SpawnPoints.Length);
-
         //“G‚ğ¶¬
-        Instantiate(m_EnemyPrefab, m_SpawnPoints[index].position, m_SpawnPoints[index].rotation);
+        GameObject enemy = 
+            Instantiate(m_EnemyPrefab, m_SpawnPoints[index].position, m_SpawnPoints[index].rotation);
+
+        SystemAI enemyScript = enemy.GetComponent<SystemAI>();
+
+        if (enemyScript != null) 
+        {
+            //enemyScript.SetSpawner(this)
+        }
+        
     }   
 }
