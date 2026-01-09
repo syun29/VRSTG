@@ -27,11 +27,17 @@ public class DamageEffect : MonoBehaviour
         _rd = GetComponent<Rigidbody>();
         _propBlock = new MaterialPropertyBlock();
 
-        //元の色を取得しておく
-        if(targetRenderer != null)
+        // 1. プロパティが存在するかチェック (HasProperty)
+        if (targetRenderer.sharedMaterial.HasProperty(ColorPropertyID))
         {
-            //初期状態の色を取得
-            _originalColor = targetRenderer.sharedMaterial.hasProperty(ColorPropertyID);
+            // 2. 存在する場合、その色を取得する (GetColor)
+            _originalColor = targetRenderer.sharedMaterial.GetColor(ColorPropertyID);
+        }
+        else
+        {
+            // プロパティがない場合のフォールバック（予備）
+            _originalColor = Color.white;
+            Debug.LogWarning("シェーダーに _BaseColor が見つかりませんでした。");
         }
     }
 
