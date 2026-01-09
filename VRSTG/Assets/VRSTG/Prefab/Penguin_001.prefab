@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Flag: 0
   m_Hp: 0
   m_HpMax: 0
+  lifeGauge: {fileID: 0}
 --- !u!114 &6327783862751702367
 MonoBehaviour:
   m_ObjectHideFlags: 0
