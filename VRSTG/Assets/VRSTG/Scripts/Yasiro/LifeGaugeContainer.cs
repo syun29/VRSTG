@@ -25,11 +25,12 @@ public class LifeGaugeContainer : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
-    public void Add(Parameta status)
+    public LifeGauge Add(Parameta status)
     {
         var lifeGauge = Instantiate(lifeGaugePrefab, transform);
         lifeGauge.Initialize(rectTransform, mainCamera, status);
         _statusLifeBarMap.Add(status, lifeGauge);
+        return lifeGauge;
     }
 
     public void Remove(Parameta status)

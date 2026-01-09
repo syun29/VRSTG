@@ -7,13 +7,14 @@ public class Parameta : MonoBehaviour
     public bool m_Flag;
     public int m_Hp;
     public int m_HpMax;
+    public LifeGauge lifeGauge;
     
     private void Start()
     {
         m_SAAI = GetComponent<SystemAI>();
         m_HpMax = m_Hp;
         m_Flag = false;
-        LifeGaugeContainer.Instance.Add(this);
+        lifeGauge = LifeGaugeContainer.Instance.Add(this);
     }
 
     protected virtual void OnDie()
