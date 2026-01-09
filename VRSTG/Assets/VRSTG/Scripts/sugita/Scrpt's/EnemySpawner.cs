@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject m_EnemyPrefab;      //¶¬‚·‚é“G
     [SerializeField] private Transform[] m_SpawnPoints;     //ã‰º¶‰E‚Ì4‚Â‚ÌƒXƒ|[ƒ“
-    [SerializeField] private float m_SpawnInterval = 2f;    //¶¬ŠÔŠui•bj
+    [SerializeField] private float m_SpawnInterval = 5f;    //¶¬ŠÔŠui•bj
     [SerializeField] private Transform m_TargetTF;
 
     //[SerializeField] private int m_MaxEnemyCount = 100;     //“G‚ÌÅ‘å”
