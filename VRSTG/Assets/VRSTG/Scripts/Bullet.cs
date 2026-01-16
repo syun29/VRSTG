@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.AI;
+using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
@@ -16,6 +18,53 @@ public class Bullet : MonoBehaviour
         m_flyingDist = dist;
     }
 
+    private IEnumerator DelayedDestroy(GameObject target, float delay)
+    {
+        // 敵の色を変えて「削除予定」を可視化
+        Renderer rend = target.GetComponentInChildren<Renderer>();
+        if (rend != null)
+        {
+            rend.material.color = Color.gray;
+        }
+
+        yield return new WaitForSeconds(delay);
+
+        Destroy(target);
+    }
+
+
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            NavMeshAgent agent = other.GetComponent<NavMeshAgent>();
+            if (agent != null) agent.enabled = false;
+
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                rb.useGravity = true;
+                Vector3 forceDir = transform.forward + Vector3.up * 0.5f;
+                rb.AddForce(forceDir.normalized * 500f, ForceMode.Impulse);
+            }
+
+            // エフェクト再生（必要ならここで）
+            // GameObject effect = Instantiate(m_effectPrefab, other.transform.position, Quaternion.identity);
+            // Destroy(effect, 2f);
+
+            // 敵を非アクティブ化してから遅延削除
+            other.gameObject.SetActive(false);
+            StartCoroutine(DelayedDestroy(other.gameObject, 2f));
+
+            Destroy(gameObject);
+        }
+
+    }
+
+
     private void Update()
     {
         m_lastPos = transform.position;
@@ -25,33 +74,43 @@ public class Bullet : MonoBehaviour
 
         Vector3 vec = transform.position - m_lastPos;
         Ray ray = new Ray(m_lastPos, vec.normalized);
-        int layerMask = LayerMask.GetMask("Default");
+        int layerMask = LayerMask.GetMask("Enemy");
         RaycastHit hit;
-        if(Physics.Raycast(ray,out hit,vec.magnitude,layerMask))
+        if (Physics.Raycast(ray, out hit, vec.magnitude, layerMask))
         {
-            Rigidbody rb = hit.collider.GetComponent<Rigidbody>();
-            if(rb != null)
+            GameObject hitObj = hit.collider.gameObject;
+
+            // 吹っ飛ばし処理
+            Rigidbody rb = hitObj.GetComponent<Rigidbody>();
+            if (rb != null)
             {
-                Vector3 dir = (transform.forward +
-                    Vector3.up * m_forceUpRaito).normalized;
+                rb.isKinematic = false;
+                rb.useGravity = true;
 
-                rb.AddForceAtPosition(dir * m_impactForce, hit.point);
+                Vector3 forceDir = transform.forward * 0.3f + Vector3.up * 2.0f;
+                rb.AddForce(forceDir.normalized * 80f, ForceMode.Impulse);
+
             }
-            Instantiate
-            (
-                m_effectPrefab,
-                hit.point,
-                Quaternion.LookRotation(hit.normal)
-            );
 
+            // エフェクト再生
+            Instantiate(m_effectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+
+            // 一定時間後に削除（非アクティブ化しない！）
+            StartCoroutine(DelayedDestroy(hitObj, 2f));
+
+            // 弾を削除
             Destroy(gameObject);
             return;
         }
+
+
 
         m_currDist += moveSpeed;
         if (m_currDist >= m_flyingDist)
         {
             Destroy(gameObject);
         }
+        Debug.Log($"vec.magnitude: {vec.magnitude}, m_currDist: {m_currDist}");
+
     }
 }

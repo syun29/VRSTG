@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class TimeLimitController : MonoBehaviour
 {
-    [SerializeField] private float timeLimit = 60f; // 制限時間（秒）
-    [SerializeField] private Text timerText;        // 時間表示用のUI（TextMeshProでもOK）
-    [SerializeField] private Transform UICanvas;
+    [SerializeField] private float timeLimit = 60f;     // 制限時間（秒）
+    [SerializeField] private Text timerText;            // 時間表示用のUI（TextMeshProでもOK）
+    [SerializeField] private Transform UICanvas;        
     [SerializeField] private Transform CameraTransform; // VRカメラ
 
     private float remainingTime;

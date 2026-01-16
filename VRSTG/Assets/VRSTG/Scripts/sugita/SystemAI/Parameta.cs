@@ -20,6 +20,7 @@ public class Parameta : MonoBehaviour
     protected virtual void OnDie()
     {
         LifeGaugeContainer.Instance.Remove(this);
+        Destroy(gameObject);
     }
 
     public bool TakeDamage(int Damage)
