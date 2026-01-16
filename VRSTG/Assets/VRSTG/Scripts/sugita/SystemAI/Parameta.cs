@@ -28,22 +28,23 @@ public class Parameta : MonoBehaviour
         bool Flag = false;
         if (m_Hp > 0)
         {
-
-        }
-        else
-        {
             m_Hp -= Damage;
             if (m_Hp <= 0)
             {
                 //Ž€–S
-               // m_SAI.Death():
+                // m_SAI.Death():
                 //Ž€–S‚µ‚½Ž–‚ðUŒ‚ŽÒ‚É’Ê’m
                 Flag = true;
             }
             else
             {
-                m_SAAI.Hit();
+                if (m_SAAI != null)
+                    m_SAAI.Hit();
             }
+        }
+        else
+        {
+
 
         }
         return Flag;

@@ -38,7 +38,7 @@ public class LifeGauge : MonoBehaviour
     private void Refresh()
     {
         if (_status.m_HpMax <= 0) return;
-        fillImage.fillAmount = _status.m_Hp / _status.m_HpMax;
+        fillImage.fillAmount = Mathf.Clamp01((float)_status.m_Hp / _status.m_HpMax);
 
         transform.position = _status.transform.position + _offset;
         transform.rotation = Quaternion.LookRotation(-(transform.position - _camera.transform.position));
