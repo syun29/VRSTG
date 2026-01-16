@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
              .SetEase(Ease.Linear)
              .OnComplete(() =>
              {
-                 Debug.Log("GameOver!w");
+                 Debug.Log("GameOver!");
 
                  transformCanhe.DOShakePosition(1.5f, 100);
              });
