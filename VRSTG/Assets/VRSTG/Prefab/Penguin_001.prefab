@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 9081336411156849997}
   m_Layer: 10
   m_Name: Penguin_001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 7437288812442129273}
   m_Layer: 10
   m_Name: characters
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,8 +518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SAAI: {fileID: 0}
   m_Flag: 0
-  m_Hp: 0
-  m_HpMax: 0
+  m_Hp: 10
+  m_HpMax: 10
   lifeGauge: {fileID: 0}
 --- !u!114 &6327783862751702367
 MonoBehaviour:
@@ -567,7 +567,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6073660616257176535}
   serializedVersion: 4
-  m_Mass: 4
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -582,7 +582,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 3938350550893358253}
   m_Layer: 10
   m_Name: penguin_001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -32,7 +32,7 @@ public class Parameta : MonoBehaviour
             if (m_Hp <= 0)
             {
                 //Ž€–S
-                // m_SAI.Death():
+                OnDie();
                 //Ž€–S‚µ‚½Ž–‚ðUŒ‚ŽÒ‚É’Ê’m
                 Flag = true;
             }
