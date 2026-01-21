@@ -3903,7 +3903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862530586a2ee0e408d5dd6a6f2601b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 60
+  timeLimit: 120
   timerText: {fileID: 1483658763}
   UICanvas: {fileID: 762913893}
   CameraTransform: {fileID: 987670706}

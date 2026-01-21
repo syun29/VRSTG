@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeLimitController : MonoBehaviour
 {
-    [SerializeField] private float timeLimit = 60f;     // 制限時間（秒）
+    [SerializeField] private float timeLimit = 90f;     // 制限時間（秒）
     [SerializeField] private Text timerText;            // 時間表示用のUI（TextMeshProでもOK）
     [SerializeField] private Transform UICanvas;        
     [SerializeField] private Transform CameraTransform; // VRカメラ
@@ -34,7 +35,8 @@ public class TimeLimitController : MonoBehaviour
         {
             isRunning = false;
             remainingTime = 0f;
-            OnTimeUp();
+            //OnTimeUp();
+            SceneManager.LoadScene(2);
         }
 
         UICanvas.transform.SetParent(CameraTransform);
